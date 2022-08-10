@@ -9,9 +9,6 @@ public class SearchTest extends CoreTestCase {
 
     @Test
     public void testFindJava() {
-//        System.out.println("Success");
-
-
 
         MainPageObject mainPO = new MainPageObject(this.driver);
 
@@ -25,14 +22,12 @@ public class SearchTest extends CoreTestCase {
                 "id:org.wikipedia:id/search_src_text",
                 "Cannot find search input");
 
-        searchInput.sendKeys("Java");
+        searchInput.sendKeys("wfewfewfwegweg");
 
         WebElement expectedResult = mainPO.waitForElementPresent(
-                "xpath://*[./*[contains(@text,'Island of Indonesia')]]",
-                "Cannot find result 'Island of Indonesia' on 'Java' search"
+                "id:org.wikipedia:id/search_empty_view",
+                "Cannot find image and text no results found"
         );
-
-        expectedResult.click();
     }
 }
 // org.wikipedia:id/fragment_feed_header
